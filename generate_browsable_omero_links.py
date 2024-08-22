@@ -1,14 +1,21 @@
 import omero
 from omero.gateway import BlitzGateway
+import yaml
 
-# Replace with your credentials and server details
-username = 'USERNAME_HERE'
-password = 'PASSWORD_HERE'
-host = 'ucl-hist-omero.cs.ucl.ac.uk'
-port = 4064
+# Load configuration from YAML file
+with open('config.yaml', 'r') as file:
+    config = yaml.safe_load(file)
 
-# Replace with your OMERO.web base URL
-web_base_url = 'https://ucl-hist-omero.cs.ucl.ac.uk/webclient/img_detail/'
+omero_config = config['omero']
+
+# Extract configuration details from the YAML file
+username = omero_config['username']
+password = omero_config['password']
+host = omero_config['host']
+port = omero_config['port']
+web_base_url = omero_config['web_base_url']
+project_id = omero_config['project_id']
+dataset_id = omero_config['dataset_id']
 
 # List of filenames
 filenames = [
@@ -17,10 +24,6 @@ filenames = [
 ]
 
 filenames = [f"{name}.ndpi [0]" for name in filenames]
-
-# Specify the project or dataset ID you want to search within
-project_id = 251 
-dataset_id = None  # Set to None if you don't want to restrict by dataset
 
 # Function to generate browseable links
 def generate_links(conn, filenames, web_base_url, project_id=None, dataset_id=None):
@@ -61,7 +64,6 @@ def generate_links(conn, filenames, web_base_url, project_id=None, dataset_id=No
             links.append((filename, None))
     
     return links
-
 
 # Connect to the OMERO server
 conn = BlitzGateway(username, password, host=host, port=port)
