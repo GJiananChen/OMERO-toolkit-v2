@@ -6,3 +6,4 @@ omero:
   web_base_url: "https://ucl-hist-omero.cs.ucl.ac.uk/webclient/img_detail/"
   project_id: 251
   dataset_id: null  # Set to null if you don't want to restrict by dataset
+  chunk_size: 100
