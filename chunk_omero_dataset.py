@@ -3,14 +3,21 @@ import os
 import omero
 from omero.gateway import BlitzGateway
 from math import ceil
+import yaml
 
-# Replace with your credentials and server details
-username = 'USERNAME_HERE'
-password = 'PASSWORD_HERE'
-host = 'ucl-hist-omero.cs.ucl.ac.uk'
-port = 4064
-dataset_id = 2566  # Replace with the actual dataset ID
-chunk_size = 100  # Number of WSIs per CSV file
+# Load configuration from YAML file
+with open('config.yaml', 'r') as file:
+    config = yaml.safe_load(file)
+
+omero_config = config['omero']
+
+# Extract configuration details from the YAML file
+username = omero_config['username']
+password = omero_config['password']
+host = omero_config['host']
+port = omero_config['port']
+dataset_id = omero_config['dataset_id']
+chunk_size = omero_config['chunk_size']
 
 # Function to chunk list into CSV files
 def chunk_list(data_list, chunk_size):
