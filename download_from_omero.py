@@ -9,7 +9,7 @@ import yaml
 # Set up argument parsing
 parser = argparse.ArgumentParser(description="Download WSI files from OMERO server based on a list in a CSV file.")
 parser.add_argument('--csv_file', type=str, help='CSV file with the chunk of WSI names')
-parser.add_argument('--config', type=str, default='~/omero_config.yaml', help='Path to the YAML configuration file')
+parser.add_argument('--config', type=str, default='configs/config.yaml', help='Path to the YAML configuration file')
 
 args = parser.parse_args()
 
