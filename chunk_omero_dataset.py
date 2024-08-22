@@ -4,9 +4,15 @@ import omero
 from omero.gateway import BlitzGateway
 from math import ceil
 import yaml
+import argparse
+
+parser = argparse.ArgumentParser(description="enumerate WSI in OMERO dataset and chunk their filenames into csvs")
+parser.add_argument('--config', type=str, default='configs/config.yaml', help='Path to the YAML configuration file')
+
+args = parser.parse_args()
 
 # Load configuration from YAML file
-with open('config.yaml', 'r') as file:
+with open(args.config, 'r') as file:
     config = yaml.safe_load(file)
 
 omero_config = config['omero']
