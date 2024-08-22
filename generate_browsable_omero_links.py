@@ -22,12 +22,8 @@ web_base_url = omero_config['web_base_url']
 project_id = omero_config['project_id']
 dataset_id = omero_config['dataset_id']
 
-# List of filenames
-filenames = [
-    '67_20-873_X_L1-3_X_b16_X',
-    '270_19-517_B_L1-3_X_b2_X',
-]
-
+# Extract filenames from the YAML file
+filenames = omero_config['filenames']
 filenames = [f"{name}.ndpi [0]" for name in filenames]
 
 # Function to generate browseable links
