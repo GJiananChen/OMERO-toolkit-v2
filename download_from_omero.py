@@ -26,7 +26,6 @@ username = omero_config['username']
 password = omero_config['password']
 dataset_id = omero_config['dataset_id']
 
-# Function to download files
 def download_file(orig_file, save_dir):
     file_name = orig_file.getName()
     file_size = orig_file.getSize()
