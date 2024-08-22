@@ -12,4 +12,4 @@ CSV_DIR="omero_2566_wsi_chunks"
 CSV_FILES=($CSV_DIR/*.csv)
 CSV_FILE=${CSV_FILES[$SLURM_ARRAY_TASK_ID]}
 
-python download_from_omero.py --csv_file omero_2566_wsi_chunks/$CSV_FILE --dataset_id 2566
+python download_from_omero.py --csv_file "$CSV_FILE"
