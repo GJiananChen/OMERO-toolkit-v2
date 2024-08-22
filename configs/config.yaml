@@ -1,0 +1,6 @@
+omero:
+  host: "ucl-hist-omero.cs.ucl.ac.uk"
+  port: 4064
+  username: "USERNAME_HERE"
+  password: "PASSWORD_HERE"
+  dataset_id: "2566"
