@@ -6,10 +6,10 @@
 #SBATCH --time=12:00:00                    # Maximum execution time (hh:mm:ss)
 #SBATCH --mem=4G                           # Memory per job
 #SBATCH --cpus-per-task=4                  # Number of CPUs per job
-#SBATCH --array=1-9                   # Array range and concurrency (adjust based on number of CSV files)
+#SBATCH --array=1-9                        # Array range based on the number of CSV files (adjust as needed)
 
 CSV_DIR="omero_2566_wsi_chunks"
 CSV_FILES=($CSV_DIR/*.csv)
-CSV_FILE=${CSV_FILES[$SLURM_ARRAY_TASK_ID]}
+CSV_FILE=${CSV_FILES[$SLURM_ARRAY_TASK_ID-1]}
 
 python download_from_omero.py --csv_file "$CSV_FILE"
