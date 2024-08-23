@@ -1,5 +1,6 @@
+# username, password, port, host and web_base_url are always required. Others depend on the task (downloading, uploading or url creation).
 omero:
-  username: "USERNAME_HERE"
+  username: "USERNAME_HERE" 
   password: "PASSWORD_HERE"
   host: "ucl-hist-omero.cs.ucl.ac.uk"
   port: 4064
