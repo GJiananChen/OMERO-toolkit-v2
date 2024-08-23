@@ -3,8 +3,8 @@ from omero.gateway import BlitzGateway
 import yaml
 import argparse
 import os
-from omero.plugins.upload import UploadControl
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import omero.model
 
 parser = argparse.ArgumentParser(description="Upload a directory of WSI files to a new dataset on OMERO server")
 parser.add_argument('--config', type=str, default='configs/config.yaml', help='Path to the YAML configuration file')
@@ -32,11 +32,19 @@ if dataset_name is None:
     exit(1)
 
 # Function to upload a single file
-def upload_file(file_path, dataset_id, conn):
+def upload_file(conn, file_path, dataset_id):
     try:
-        # Use the UploadControl plugin to upload files
-        upload_ctrl = UploadControl(conn.c, args=[], mode='simple')
-        upload_ctrl.upload_paths([file_path], dataset_id)
+        dataset = conn.getObject("Dataset", dataset_id)
+        if not dataset:
+            raise Exception(f"Dataset with ID {dataset_id} not found.")
+
+        # Upload the file
+        print(f"Uploading {file_path}...")
+        file_size = os.path.getsize(file_path)
+        with open(file_path, 'rb') as f:
+            original_file = conn.createOriginalFileFromFileObj(f, file_path, file_size)
+            dataset.linkAnnotation(original_file)
+
         print(f"{os.path.basename(file_path)} uploaded successfully.")
         return (file_path, "Success")
     except Exception as e:
@@ -57,21 +65,35 @@ if connected:
         conn.close()
         exit(1)
 
-    # Create a new dataset
+    # Load the project
     project = conn.getObject("Project", omero_config['project_id'])
     
     if not project:
         print(f"Project ID {omero_config['project_id']} not found.")
         conn.close()
         exit(1)
-    
+
+    # Create a new dataset
     new_dataset = omero.model.DatasetI()
     new_dataset.setName(omero.rtypes.rstring(dataset_name))
-    project.linkDataset(new_dataset)
-    conn.getUpdateService().saveObject(new_dataset)
-    
-    dataset_id = new_dataset.id.val
+    saved_dataset = conn.getUpdateService().saveAndReturnObject(new_dataset)
+
+    # Check if the dataset was created successfully
+    if saved_dataset is None or saved_dataset.id is None:
+        print("Failed to create the dataset.")
+        conn.close()
+        exit(1)
+
+    dataset_id = saved_dataset.id.val
     print(f"Dataset '{dataset_name}' created with ID {dataset_id}")
+
+    # Manually create the link between the project and the dataset
+    link = omero.model.ProjectDatasetLinkI()
+    link.setParent(omero.model.ProjectI(project.getId(), False))
+    link.setChild(omero.model.DatasetI(dataset_id, False))
+    conn.getUpdateService().saveObject(link)
+    
+    print(f"Dataset '{dataset_name}' linked to project '{project.getName()}'.")
 
     # Upload WSI files to the new dataset
     wsi_files = [os.path.join(directory, f) for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))]
@@ -83,7 +105,7 @@ if connected:
 
     # Use ThreadPoolExecutor to parallelize uploads
     with ThreadPoolExecutor(max_workers=args.threads) as executor:
-        futures = [executor.submit(upload_file, wsi_file, dataset_id, conn) for wsi_file in wsi_files]
+        futures = [executor.submit(upload_file, conn, wsi_file, dataset_id) for wsi_file in wsi_files]
         for future in as_completed(futures):
             result = future.result()
             if result[1] == "Failed":
