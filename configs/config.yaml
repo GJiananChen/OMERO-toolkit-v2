@@ -10,4 +10,4 @@ omero:
   filenames:
     - "67_20-873_X_L1-3_X_b16_X"
     - "270_19-517_B_L1-3_X_b2_X"
-  new_dataset_id: None # Set if you're uploading WSI to omero as a new dataset_id
+  new_dataset_name: None # Set if you're uploading WSI to omero as a new dataset
