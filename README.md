@@ -17,7 +17,7 @@ Example use:
 Setup conda and install requirements:
 
 ```bash
-conda create --name omero python=3.7.7
+conda create --name omero
 ```
 
 ```bash
