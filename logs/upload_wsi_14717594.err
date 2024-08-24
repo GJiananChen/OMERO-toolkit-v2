@@ -1,0 +1,3 @@
+WARNING:omero.client:Cannot get session service for killSession. Using closeSession
+slurmstepd: error: _cgroup_procs_check: failed on path /sys/fs/cgroup/memory/slurm/uid_1485/job_14717594/step_batch/cgroup.procs: No such file or directory
+slurmstepd: error: unable to read '/sys/fs/cgroup/memory/slurm/uid_1485/job_14717594/step_batch/cgroup.procs'

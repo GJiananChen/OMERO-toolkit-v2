@@ -1,0 +1,492 @@
+INFO: localdir at /localscratch/14717594.craig.glastonbury
+INFO: your job will run on local system.
+Connected to OMERO server successfully!
+Project 'HE_IBD_spatial_samples' created with ID 454
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-005.tif
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-336_STIBD-238.tif
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-315_STIBD-033.tif
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-405_STIBD-458_Control3.tif
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/IMU_Colon_Control.tif
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-202_STIBD-208.tif
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-222_STIBD-300.tif
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-058_STIBD-268.tif
+Failed to upload STIBD-222_STIBD-300.tif: Using OMERO.java-5.6.13-ice36
+Traceback (most recent call last):
+  File "<string>", line 619, in attach
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 338, in attach
+    set_current=set_current)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 369, in create
+    sf = client.createSession(name, pasw)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/clients.py", line 625, in createSession
+    prx = rtr.createSession(username, password, ctx)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/Glacier2_Router_ice.py", line 258, in createSession
+    return _M_Glacier2.Router._op_createSession.invoke(self, ((userId, password), _ctx))
+Glacier2.PermissionDeniedException: exception ::Glacier2::PermissionDeniedException
+{
+    reason = Password check failed for '07647f40-276e-4290-a4ee-933ed6b0fe88': [user=craig.glastonbury, created=2024-08-23 20:08:08.108, closed=2024-08-23 20:20:01.39628]
+}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/craig.glastonbury/craig_wsi/bin/omero", line 10, in <module>
+    sys.exit(main())
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/main.py", line 125, in main
+    rv = omero.cli.argv()
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1771, in argv
+    cli.invoke(args[1:])
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1208, in invoke
+    stop = self.onecmd(line, previous_args)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1285, in onecmd
+    self.execute(line, previous_args)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1367, in execute
+    args.func(args)
+  File "<string>", line 549, in importer
+  File "<string>", line 127, in __init__
+  File "<string>", line 242, in set_login_arguments
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1585, in conn
+    self.controls["sessions"].login(args)
+  File "<string>", line 514, in login
+  File "<string>", line 612, in check_and_attach
+  File "<string>", line 624, in attach
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 432, in clear
+    self.walk(f, host, name, sess)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 324, in walk
+    func(h, n, s)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 430, in f
+    s.remove()
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero_ext/path.py", line 1256, in remove
+    os.remove(self)
+FileNotFoundError: [Errno 2] No such file or directory: path('/home/craig.glastonbury/omero/sessions/ucl-hist-omero.cs.ucl.ac.uk/craig.glastonbury/07647f40-276e-4290-a4ee-933ed6b0fe88')
+
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-328_STIBD-212.tif
+Failed to upload IMU_Colon_Control.tif: Using OMERO.java-5.6.13-ice36
+Traceback (most recent call last):
+  File "<string>", line 619, in attach
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 338, in attach
+    set_current=set_current)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 369, in create
+    sf = client.createSession(name, pasw)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/clients.py", line 625, in createSession
+    prx = rtr.createSession(username, password, ctx)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/Glacier2_Router_ice.py", line 258, in createSession
+    return _M_Glacier2.Router._op_createSession.invoke(self, ((userId, password), _ctx))
+Glacier2.PermissionDeniedException: exception ::Glacier2::PermissionDeniedException
+{
+    reason = Password check failed for '07647f40-276e-4290-a4ee-933ed6b0fe88': [user=craig.glastonbury, created=2024-08-23 20:08:08.108, closed=2024-08-23 20:20:01.39628]
+}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/craig.glastonbury/craig_wsi/bin/omero", line 10, in <module>
+    sys.exit(main())
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/main.py", line 125, in main
+    rv = omero.cli.argv()
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1771, in argv
+    cli.invoke(args[1:])
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1208, in invoke
+    stop = self.onecmd(line, previous_args)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1285, in onecmd
+    self.execute(line, previous_args)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1367, in execute
+    args.func(args)
+  File "<string>", line 549, in importer
+  File "<string>", line 127, in __init__
+  File "<string>", line 242, in set_login_arguments
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1585, in conn
+    self.controls["sessions"].login(args)
+  File "<string>", line 514, in login
+  File "<string>", line 612, in check_and_attach
+  File "<string>", line 624, in attach
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 432, in clear
+    self.walk(f, host, name, sess)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 324, in walk
+    func(h, n, s)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 430, in f
+    s.remove()
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero_ext/path.py", line 1256, in remove
+    os.remove(self)
+FileNotFoundError: [Errno 2] No such file or directory: path('/home/craig.glastonbury/omero/sessions/ucl-hist-omero.cs.ucl.ac.uk/craig.glastonbury/07647f40-276e-4290-a4ee-933ed6b0fe88')
+
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-253_STIBD-032.tif
+Failed to upload STIBD-405_STIBD-458_Control3.tif: Using OMERO.java-5.6.13-ice36
+Traceback (most recent call last):
+  File "<string>", line 619, in attach
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 338, in attach
+    set_current=set_current)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 369, in create
+    sf = client.createSession(name, pasw)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/clients.py", line 625, in createSession
+    prx = rtr.createSession(username, password, ctx)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/Glacier2_Router_ice.py", line 258, in createSession
+    return _M_Glacier2.Router._op_createSession.invoke(self, ((userId, password), _ctx))
+Glacier2.PermissionDeniedException: exception ::Glacier2::PermissionDeniedException
+{
+    reason = Password check failed for '07647f40-276e-4290-a4ee-933ed6b0fe88': [user=craig.glastonbury, created=2024-08-23 20:08:08.108, closed=2024-08-23 20:20:01.39628]
+}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/craig.glastonbury/craig_wsi/bin/omero", line 10, in <module>
+    sys.exit(main())
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/main.py", line 125, in main
+    rv = omero.cli.argv()
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1771, in argv
+    cli.invoke(args[1:])
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1208, in invoke
+    stop = self.onecmd(line, previous_args)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1285, in onecmd
+    self.execute(line, previous_args)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1367, in execute
+    args.func(args)
+  File "<string>", line 549, in importer
+  File "<string>", line 127, in __init__
+  File "<string>", line 242, in set_login_arguments
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1585, in conn
+    self.controls["sessions"].login(args)
+  File "<string>", line 514, in login
+  File "<string>", line 612, in check_and_attach
+  File "<string>", line 624, in attach
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 432, in clear
+    self.walk(f, host, name, sess)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 324, in walk
+    func(h, n, s)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 430, in f
+    s.remove()
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero_ext/path.py", line 1256, in remove
+    os.remove(self)
+FileNotFoundError: [Errno 2] No such file or directory: path('/home/craig.glastonbury/omero/sessions/ucl-hist-omero.cs.ucl.ac.uk/craig.glastonbury/07647f40-276e-4290-a4ee-933ed6b0fe88')
+
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-023_STIBD-344.tif
+Failed to upload STIBD-315_STIBD-033.tif: Using OMERO.java-5.6.13-ice36
+Traceback (most recent call last):
+  File "<string>", line 619, in attach
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 338, in attach
+    set_current=set_current)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 369, in create
+    sf = client.createSession(name, pasw)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/clients.py", line 625, in createSession
+    prx = rtr.createSession(username, password, ctx)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/Glacier2_Router_ice.py", line 258, in createSession
+    return _M_Glacier2.Router._op_createSession.invoke(self, ((userId, password), _ctx))
+Glacier2.PermissionDeniedException: exception ::Glacier2::PermissionDeniedException
+{
+    reason = Password check failed for '07647f40-276e-4290-a4ee-933ed6b0fe88': [user=craig.glastonbury, created=2024-08-23 20:08:08.108, closed=2024-08-23 20:20:01.39628]
+}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/craig.glastonbury/craig_wsi/bin/omero", line 10, in <module>
+    sys.exit(main())
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/main.py", line 125, in main
+    rv = omero.cli.argv()
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1771, in argv
+    cli.invoke(args[1:])
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1208, in invoke
+    stop = self.onecmd(line, previous_args)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1285, in onecmd
+    self.execute(line, previous_args)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1367, in execute
+    args.func(args)
+  File "<string>", line 549, in importer
+  File "<string>", line 127, in __init__
+  File "<string>", line 242, in set_login_arguments
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1585, in conn
+    self.controls["sessions"].login(args)
+  File "<string>", line 514, in login
+  File "<string>", line 612, in check_and_attach
+  File "<string>", line 624, in attach
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 432, in clear
+    self.walk(f, host, name, sess)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 324, in walk
+    func(h, n, s)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 430, in f
+    s.remove()
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero_ext/path.py", line 1256, in remove
+    os.remove(self)
+FileNotFoundError: [Errno 2] No such file or directory: path('/home/craig.glastonbury/omero/sessions/ucl-hist-omero.cs.ucl.ac.uk/craig.glastonbury/07647f40-276e-4290-a4ee-933ed6b0fe88')
+
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-007_STIBD-022.tif
+Failed to upload STIBD-058_STIBD-268.tif: Using OMERO.java-5.6.13-ice36
+Traceback (most recent call last):
+  File "<string>", line 619, in attach
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 338, in attach
+    set_current=set_current)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 369, in create
+    sf = client.createSession(name, pasw)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/clients.py", line 625, in createSession
+    prx = rtr.createSession(username, password, ctx)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/Glacier2_Router_ice.py", line 258, in createSession
+    return _M_Glacier2.Router._op_createSession.invoke(self, ((userId, password), _ctx))
+Glacier2.PermissionDeniedException: exception ::Glacier2::PermissionDeniedException
+{
+    reason = Password check failed for '07647f40-276e-4290-a4ee-933ed6b0fe88': [user=craig.glastonbury, created=2024-08-23 20:08:08.108, closed=2024-08-23 20:20:01.39628]
+}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/craig.glastonbury/craig_wsi/bin/omero", line 10, in <module>
+    sys.exit(main())
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/main.py", line 125, in main
+    rv = omero.cli.argv()
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1771, in argv
+    cli.invoke(args[1:])
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1208, in invoke
+    stop = self.onecmd(line, previous_args)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1285, in onecmd
+    self.execute(line, previous_args)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1367, in execute
+    args.func(args)
+  File "<string>", line 549, in importer
+  File "<string>", line 127, in __init__
+  File "<string>", line 242, in set_login_arguments
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1585, in conn
+    self.controls["sessions"].login(args)
+  File "<string>", line 514, in login
+  File "<string>", line 612, in check_and_attach
+  File "<string>", line 624, in attach
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 432, in clear
+    self.walk(f, host, name, sess)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 324, in walk
+    func(h, n, s)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 430, in f
+    s.remove()
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero_ext/path.py", line 1256, in remove
+    os.remove(self)
+FileNotFoundError: [Errno 2] No such file or directory: path('/home/craig.glastonbury/omero/sessions/ucl-hist-omero.cs.ucl.ac.uk/craig.glastonbury/07647f40-276e-4290-a4ee-933ed6b0fe88')
+
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-463_STIBD-345.tif
+Failed to upload STIBD-336_STIBD-238.tif: Using OMERO.java-5.6.13-ice36
+Traceback (most recent call last):
+  File "<string>", line 619, in attach
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 338, in attach
+    set_current=set_current)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 369, in create
+    sf = client.createSession(name, pasw)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/clients.py", line 625, in createSession
+    prx = rtr.createSession(username, password, ctx)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/Glacier2_Router_ice.py", line 258, in createSession
+    return _M_Glacier2.Router._op_createSession.invoke(self, ((userId, password), _ctx))
+Glacier2.PermissionDeniedException: exception ::Glacier2::PermissionDeniedException
+{
+    reason = Password check failed for '07647f40-276e-4290-a4ee-933ed6b0fe88': [user=craig.glastonbury, created=2024-08-23 20:08:08.108, closed=2024-08-23 20:20:01.39628]
+}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/craig.glastonbury/craig_wsi/bin/omero", line 10, in <module>
+    sys.exit(main())
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/main.py", line 125, in main
+    rv = omero.cli.argv()
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1771, in argv
+    cli.invoke(args[1:])
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1208, in invoke
+    stop = self.onecmd(line, previous_args)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1285, in onecmd
+    self.execute(line, previous_args)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1367, in execute
+    args.func(args)
+  File "<string>", line 549, in importer
+  File "<string>", line 127, in __init__
+  File "<string>", line 242, in set_login_arguments
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1585, in conn
+    self.controls["sessions"].login(args)
+  File "<string>", line 514, in login
+  File "<string>", line 612, in check_and_attach
+  File "<string>", line 624, in attach
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 432, in clear
+    self.walk(f, host, name, sess)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 324, in walk
+    func(h, n, s)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 430, in f
+    s.remove()
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero_ext/path.py", line 1256, in remove
+    os.remove(self)
+FileNotFoundError: [Errno 2] No such file or directory: path('/home/craig.glastonbury/omero/sessions/ucl-hist-omero.cs.ucl.ac.uk/craig.glastonbury/07647f40-276e-4290-a4ee-933ed6b0fe88')
+
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-009_STIBD-031.tif
+Failed to upload STIBD-202_STIBD-208.tif: Using OMERO.java-5.6.13-ice36
+Traceback (most recent call last):
+  File "<string>", line 619, in attach
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 338, in attach
+    set_current=set_current)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 369, in create
+    sf = client.createSession(name, pasw)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/clients.py", line 625, in createSession
+    prx = rtr.createSession(username, password, ctx)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/Glacier2_Router_ice.py", line 258, in createSession
+    return _M_Glacier2.Router._op_createSession.invoke(self, ((userId, password), _ctx))
+Glacier2.PermissionDeniedException: exception ::Glacier2::PermissionDeniedException
+{
+    reason = Password check failed for '07647f40-276e-4290-a4ee-933ed6b0fe88': [user=craig.glastonbury, created=2024-08-23 20:08:08.108, closed=2024-08-23 20:20:01.39628]
+}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/craig.glastonbury/craig_wsi/bin/omero", line 10, in <module>
+    sys.exit(main())
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/main.py", line 125, in main
+    rv = omero.cli.argv()
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1771, in argv
+    cli.invoke(args[1:])
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1208, in invoke
+    stop = self.onecmd(line, previous_args)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1285, in onecmd
+    self.execute(line, previous_args)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1367, in execute
+    args.func(args)
+  File "<string>", line 549, in importer
+  File "<string>", line 127, in __init__
+  File "<string>", line 242, in set_login_arguments
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/cli.py", line 1585, in conn
+    self.controls["sessions"].login(args)
+  File "<string>", line 514, in login
+  File "<string>", line 612, in check_and_attach
+  File "<string>", line 624, in attach
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 432, in clear
+    self.walk(f, host, name, sess)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 324, in walk
+    func(h, n, s)
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero/util/sessions.py", line 430, in f
+    s.remove()
+  File "/home/craig.glastonbury/craig_wsi/lib/python3.7/site-packages/omero_ext/path.py", line 1256, in remove
+    os.remove(self)
+FileNotFoundError: [Errno 2] No such file or directory: path('/home/craig.glastonbury/omero/sessions/ucl-hist-omero.cs.ucl.ac.uk/craig.glastonbury/07647f40-276e-4290-a4ee-933ed6b0fe88')
+
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-471_STIBD-423.tif
+STIBD-463_STIBD-345.tif uploaded successfully.
+Upload speed: 3.07 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-252_STIBD-010.tif
+STIBD-005.tif uploaded successfully.
+Upload speed: 3.27 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-298_STIBD-050.tif
+STIBD-007_STIBD-022.tif uploaded successfully.
+Upload speed: 1.75 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-335_STIBD-331.tif
+STIBD-471_STIBD-423.tif uploaded successfully.
+Upload speed: 1.75 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-287_STIBD-204.tif
+STIBD-335_STIBD-331.tif uploaded successfully.
+Upload speed: 10.34 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-273_STIBD-241.tif
+STIBD-273_STIBD-241.tif uploaded successfully.
+Upload speed: 9.38 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-280_STIBD-272.tif
+STIBD-280_STIBD-272.tif uploaded successfully.
+Upload speed: 11.93 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-333_STIBD-052.tif
+STIBD-253_STIBD-032.tif uploaded successfully.
+Upload speed: 1.16 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-337_STIBD-330.tif
+STIBD-009_STIBD-031.tif uploaded successfully.
+Upload speed: 1.06 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-476_STIBD-379.tif
+STIBD-328_STIBD-212.tif uploaded successfully.
+Upload speed: 1.05 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-284_STIBD-067.tif
+STIBD-023_STIBD-344.tif uploaded successfully.
+Upload speed: 1.06 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-214_STIBD-028.tif
+STIBD-252_STIBD-010.tif uploaded successfully.
+Upload speed: 1.36 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-311_STIBD-060.tif
+STIBD-476_STIBD-379.tif uploaded successfully.
+Upload speed: 5.58 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-323_STIBD-044.tif
+STIBD-333_STIBD-052.tif uploaded successfully.
+Upload speed: 4.37 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-380_STIBD-340.tif
+STIBD-287_STIBD-204.tif uploaded successfully.
+Upload speed: 1.79 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-371_STIBD-365.tif
+STIBD-323_STIBD-044.tif uploaded successfully.
+Upload speed: 3.94 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-290_STIBD-294.tif
+STIBD-298_STIBD-050.tif uploaded successfully.
+Upload speed: 1.07 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-242_STIBD-203.tif
+STIBD-284_STIBD-067.tif uploaded successfully.
+Upload speed: 1.73 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-308_STIBD-201.tif
+STIBD-290_STIBD-294.tif uploaded successfully.
+Upload speed: 4.67 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-047_STIBD-221.tif
+STIBD-214_STIBD-028.tif uploaded successfully.
+Upload speed: 1.45 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-318.tif
+STIBD-311_STIBD-060.tif uploaded successfully.
+Upload speed: 1.74 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-254_STIBD-251.tif
+STIBD-380_STIBD-340.tif uploaded successfully.
+Upload speed: 1.66 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-056_STIBD-334.tif
+STIBD-056_STIBD-334.tif uploaded successfully.
+Upload speed: 12.58 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-265_STIBD-034.tif
+STIBD-047_STIBD-221.tif uploaded successfully.
+Upload speed: 4.75 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-292_STIBD-285.tif
+STIBD-337_STIBD-330.tif uploaded successfully.
+Upload speed: 1.05 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-006_STIBD-276.tif
+STIBD-242_STIBD-203.tif uploaded successfully.
+Upload speed: 2.45 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-209_STIBD-263_Control1.tif
+STIBD-006_STIBD-276.tif uploaded successfully.
+Upload speed: 8.39 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-026_STIBD-282.tif
+STIBD-371_STIBD-365.tif uploaded successfully.
+Upload speed: 1.35 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-012_STIBD-064.tif
+STIBD-292_STIBD-285.tif uploaded successfully.
+Upload speed: 6.11 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-296_STIBD-053.tif
+STIBD-318.tif uploaded successfully.
+Upload speed: 2.61 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-467_STIBD-385.tif
+STIBD-296_STIBD-053.tif uploaded successfully.
+Upload speed: 10.02 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-025_STIBD-024_Control2.tif
+STIBD-025_STIBD-024_Control2.tif uploaded successfully.
+Upload speed: 10.79 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-478_STIBD-429.tif
+STIBD-026_STIBD-282.tif uploaded successfully.
+Upload speed: 3.50 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-260_STIBD-011.tif
+STIBD-209_STIBD-263_Control1.tif uploaded successfully.
+Upload speed: 2.94 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-347_STIBD-348.tif
+STIBD-254_STIBD-251.tif uploaded successfully.
+Upload speed: 1.80 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-027_STIBD-322.tif
+STIBD-012_STIBD-064.tif uploaded successfully.
+Upload speed: 2.80 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-482.tif
+STIBD-347_STIBD-348.tif uploaded successfully.
+Upload speed: 11.61 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-RES1_014.tif
+STIBD-265_STIBD-034.tif uploaded successfully.
+Upload speed: 1.77 MB/s
+Running command: omero import -s ucl-hist-omero.cs.ucl.ac.uk -u craig.glastonbury -w wV4ZxF6Vkc$#zyRzK% -d Dataset:2674 /scratch/glastonbury/spatial_he/STIBD-327_STIBD-051.tif
+STIBD-482.tif uploaded successfully.
+Upload speed: 10.23 MB/s
+STIBD-327_STIBD-051.tif uploaded successfully.
+Upload speed: 12.43 MB/s
+STIBD-308_STIBD-201.tif uploaded successfully.
+Upload speed: 1.06 MB/s
+STIBD-478_STIBD-429.tif uploaded successfully.
+Upload speed: 3.07 MB/s
+STIBD-RES1_014.tif uploaded successfully.
+Upload speed: 1.68 MB/s
+STIBD-027_STIBD-322.tif uploaded successfully.
+Upload speed: 1.79 MB/s
+STIBD-467_STIBD-385.tif uploaded successfully.
+Upload speed: 0.94 MB/s
+STIBD-260_STIBD-011.tif uploaded successfully.
+Upload speed: 0.94 MB/s
