@@ -1,0 +1,4 @@
+omero
+argparse==1.1
+yaml==6.0
+pandas==1.3.5
