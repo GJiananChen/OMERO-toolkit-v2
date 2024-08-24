@@ -15,5 +15,5 @@ We also sometimes want to include the OMERO URL to browse to a given WSI in a me
 Example use:
 
 ```python
-python omero-toolkit/upload_dataset_omero.py --config configs/config.yaml --directory /scratch/glastonbury/spatial_he/ --threads 8
+python omero-toolkit/upload_dataset_omero.py --config configs/config.yaml --directory directory/to/wsi/ --threads 8
 ```
