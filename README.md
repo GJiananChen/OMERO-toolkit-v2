@@ -1,5 +1,5 @@
 # OMERO-toolkit
-simple python API code for useful OMERO operations
+Simple but useful Python API code for common OMERO operations
 
 Downloading many WSI from OMERO in an automated manner:
 
