@@ -14,6 +14,16 @@ We also sometimes want to include the OMERO URL to browse to a given WSI in a me
 
 Example use:
 
+Setup conda and install requirements:
+
+```bash
+conda create --name omero python=3.7.7
+```
+
+```bash
+pip install -r requirements.txt
+```
+
 ```python
 python omero-toolkit/upload_dataset_omero.py --config configs/config.yaml --directory directory/to/wsi/ --threads 8
 ```
