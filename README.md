@@ -1,7 +1,7 @@
 # OMERO-toolkit
 Simple but useful Python API code for common OMERO operations
 
-Downloading many WSI from OMERO in an automated manner:
+Downloading, uploading or retrieving URLs for slides stored in OMERO in an automated manner:
 
 1. `chunk_omero_dataset.py` - Enumerate WSI present in a dataset stored in OMERO. The intention is to take the list of WSI and chunk the list into multiple csvs. These csvs can then be used to download the WSI in batches.
 2. `download_from_omero.py` - Using the chunked list of WSI, download them. This can be parallelised further by using a slurm job (see sbatch scripts).
