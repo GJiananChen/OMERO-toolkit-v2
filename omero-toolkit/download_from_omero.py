@@ -19,12 +19,20 @@ with open(args.config, 'r') as file:
 
 omero_config = config['omero']
 
-# Replace with your credentials and server details from YAML
+# Extract credentials and server details
 host = omero_config['host']
 port = omero_config['port']
 username = omero_config['username']
 password = omero_config['password']
-dataset_id = omero_config['dataset_id']
+dataset_ids = omero_config['dataset_id']
+
+# Parse dataset IDs (handle list or single string of IDs)
+if isinstance(dataset_ids, str):
+    dataset_ids = [int(id_.strip()) for id_ in dataset_ids.split(",")]
+elif isinstance(dataset_ids, list):
+    dataset_ids = [int(id_) for id_ in dataset_ids]
+else:
+    raise ValueError("Invalid `dataset_id` format. Provide a single ID or a list of IDs in the YAML configuration.")
 
 def download_file(orig_file, save_dir):
     file_name = orig_file.getName()
@@ -55,44 +63,48 @@ connected = conn.connect()
 
 if connected:
     print("Connected to OMERO server successfully!")
-    
-    dataset = conn.getObject("Dataset", dataset_id)
-    
-    if dataset:
-        # Read the CSV file to get the list of WSI names
-        df = pd.read_csv(args.csv_file)
-        wsi_names = df['WSI Names'].tolist()
-        
-        # Create a directory to save NDPI files
-        save_dir = f"{dataset.getName()}_ndpi_files"
-        os.makedirs(save_dir, exist_ok=True)
-        
-        download_tasks = []
-        
-        # Use ThreadPoolExecutor for parallel downloads
-        with ThreadPoolExecutor() as executor:
-            for image in dataset.listChildren():
-                if image.getName() in wsi_names:
-                    print(f"Finding original NDPI file for image: {image.getName()} (ID: {image.getId()})")
-                    
-                    # Get the fileset associated with the image
-                    fileset = image.getFileset()
-                    if fileset is not None:
-                        for orig_file in fileset.listFiles():
-                            # Submit the download task to the executor
-                            future = executor.submit(download_file, orig_file, save_dir)
-                            download_tasks.append(future)
-                    else:
-                        print(f"No fileset found for image: {image.getName()}")
-        
-        # Wait for all downloads to complete
-        for future in download_tasks:
-            future.result()
 
-    else:
-        print(f"Dataset with ID {dataset_id} not found.")
-    
+    for dataset_id in dataset_ids:
+        print(f"Processing dataset ID: {dataset_id}")
+
+        dataset = conn.getObject("Dataset", dataset_id)
+
+        if dataset:
+            # Read the CSV file to get the list of WSI names
+            df = pd.read_csv(args.csv_file)
+            wsi_names = df['WSI Names'].tolist()
+            
+            # Create a directory to save NDPI files
+            save_dir = f"{dataset.getName()}_ndpi_files"
+            os.makedirs(save_dir, exist_ok=True)
+            
+            download_tasks = []
+            
+            # Use ThreadPoolExecutor for parallel downloads
+            with ThreadPoolExecutor() as executor:
+                for image in dataset.listChildren():
+                    if image.getName() in wsi_names:
+                        print(f"Finding original NDPI file for image: {image.getName()} (ID: {image.getId()})")
+                        
+                        # Get the fileset associated with the image
+                        fileset = image.getFileset()
+                        if fileset is not None:
+                            for orig_file in fileset.listFiles():
+                                # Submit the download task to the executor
+                                future = executor.submit(download_file, orig_file, save_dir)
+                                download_tasks.append(future)
+                        else:
+                            print(f"No fileset found for image: {image.getName()}")
+            
+            # Wait for all downloads to complete
+            for future in download_tasks:
+                future.result()
+
+        else:
+            print(f"Dataset with ID {dataset_id} not found.")
+
     # Close connection
     conn.close()
 else:
     print("Failed to connect to OMERO server.")
+

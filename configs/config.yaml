@@ -1,12 +1,12 @@
 # username, password, port, host and web_base_url are always required. Others depend on the task (downloading, uploading or url creation).
 omero:
-  username: "USERNAME_HERE" 
-  password: "PASSWORD_HERE"
+  username: "enter_user_here" 
+  password: "enter_pass_here"
   host: "ucl-hist-omero.cs.ucl.ac.uk"
   port: 4064
   web_base_url: "https://ucl-hist-omero.cs.ucl.ac.uk/webclient/img_detail/"
-  project_id: 251
-  dataset_id: null  # Set to null if you don't want to restrict by dataset
+  project_id: 401
+  dataset_id: 2554, 2556
   chunk_size: 100
   filenames:
     - "67_20-873_X_L1-3_X_b16_X"
