@@ -19,8 +19,9 @@ conda create -n omero python=3.9
 ```
 
 ```bash
-conda install -c conda-forge zeroc-ice
+conda install -c ome omero-py
 ```
+
 ```bash
 pip install -r requirements.txt
 ```
