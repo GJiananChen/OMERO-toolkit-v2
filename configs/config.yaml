@@ -3,6 +3,7 @@ omero:
   username: "enter_user_here" 
   password: "enter_pass_here"
   host: "ucl-hist-omero.cs.ucl.ac.uk"
+  group: "GROUP_NAME"
   port: 4064
   web_base_url: "https://ucl-hist-omero.cs.ucl.ac.uk/webclient/img_detail/"
   project_id: 401
