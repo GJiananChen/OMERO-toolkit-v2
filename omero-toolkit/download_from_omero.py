@@ -24,8 +24,8 @@ host = omero_config['host']
 port = omero_config['port']
 username = omero_config['username']
 password = omero_config['password']
-dataset_ids = omero_config['dataset_id']
-
+#dataset_ids = omero_config['dataset_id']
+dataset_ids = ["2554", "2556", "2805", "2806"]
 dataset_ids = [dataset_ids] if isinstance(dataset_ids, int) else dataset_ids
 
 # Retrieve filenames from YAML if no CSV is provided
@@ -55,6 +55,7 @@ def download_file(orig_file, save_dir):
 # Connect to OMERO server
 conn = BlitzGateway(username, password, host=host, port=port)
 connected = conn.connect()
+conn.SERVICE_OPTS.setOmeroGroup("-1")
 
 if connected:
     print("Connected to OMERO server successfully!")
@@ -64,6 +65,7 @@ if connected:
         dataset = conn.getObject("Dataset", dataset_id)
         
         if dataset:
+            print(dataset)
             save_dir = f"{dataset.getName()}_ndpi_files"
             os.makedirs(save_dir, exist_ok=True)
             

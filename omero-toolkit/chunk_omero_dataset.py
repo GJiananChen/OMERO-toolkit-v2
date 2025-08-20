@@ -64,9 +64,16 @@ logging.info("Connecting to OMERO server...")
 conn = BlitzGateway(username, password, host=host, port=port)
 connected = conn.connect()
 
+conn.SERVICE_OPTS.setOmeroGroup("-1")
+#ds = conn.getQueryService().get("Dataset", id, {"omero.group":"-1"})
+#group_id = ds.details.group.id.val
+#print(group_id)
+#conn.setGroupForSession(group_id)
+
 if connected:
     logging.info("Connected to OMERO server successfully.")
     
+        
     for dataset_id in dataset_ids:
         try:
             # Fetch dataset with the given ID
