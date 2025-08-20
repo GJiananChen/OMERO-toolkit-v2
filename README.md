@@ -1,4 +1,7 @@
-# OMERO-toolkit
+# OMERO-toolkit-v2
+Made minor improvements for downloading from Omero based on the version created by [GlastonburyC](https://github.com/GlastonburyC/OMERO-toolkit)
+
+------------------------------------------------------------------------------------------------------
 Simple but useful Python API code for common OMERO operations
 
 Downloading, uploading or retrieving URLs for slides stored in OMERO in an automated manner:
